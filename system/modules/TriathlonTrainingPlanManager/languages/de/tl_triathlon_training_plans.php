@@ -30,42 +30,32 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['title']                           = array('Titel', 'Geben Sie den Titel für diesen Trainingsplan an.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['date']                            = array('Datum', 'Wählen Sie das Datum für diesen Trainingsplan aus.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['kindOfSport']                     = array('Sportart', 'Wählen Sie die Sportart für diesen Trainingsplan aus.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['performanceClass']                = array('Leistungsklasse', 'Wählen Sie die Leistungsklasse für diesen Trainingsplan aus.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructions']            = array('Trainingsanweisungen', 'Geben Sie die Trainingsanweisungen für diesen Trainingsplan ein.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsBlock']       = array('Block', 'Geben Sie den Block für diese Trainingsanweisungen an.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsRepetition']  = array('Wiederholung', 'Geben Sie die Anzahl der Wiederholungen für diese Trainingsanweisungen an.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsInterval']    = array('Intervall', 'Geben Sie die Intervalllänge für diese Trainingsanweisungen an.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsDescription'] = array('Beschreibung', 'Geben Sie die Beschreibung für diese Trainingsanweisungen an.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsExecution']   = array('Ausführung', 'Geben Sie spezielle Ausführungshinweise für diese Trainingsanweisungen an.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['comment']                         = array('Kommentar', 'Geben Sie ein Kommentar zu diesen Trainingsplan an.');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['published']                       = array('Trainingsplan veröffentlichen', 'Den Trainingsplan auf der Webseite anzeigen.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['title']                         = array('Titel', 'Geben Sie den Titel für diesen Trainingsplan an.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['date']                          = array('Datum', 'Wählen Sie das Datum für diesen Trainingsplan aus.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['kindOfSport']                   = array('Sportart', 'Wählen Sie die Sportart für diesen Trainingsplan aus.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentForPerformanceClass'] = array('Zuordnung zu Leistungsklasse', 'Wählen Sie ob diesem Trainingsplan eine Leistungsklasse zugeordnet werden soll.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentPerformanceClass']    = array('Leistungsklasse', 'Wählen Sie die Leistungsklasse für diesen Trainingsplan aus.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentForMembers']          = array('Zuordnung zu Mitglieder', 'Wählen Sie ob diesem Trainingsplan ein oder mehrere Mitglieder zugeordnet werden soll.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentMembers']             = array('Mitglieder', 'Wählen Sie die Mitglieder für diesen Trainingsplan aus.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentForMemberGroups']     = array('Zuordnung zu Mitgliedergruppen', 'Wählen Sie ob diesem Trainingsplan ein oder mehrere Mitgliedergruppen zugeordnet werden soll.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentMemberGroups']        = array('Mitgliedergruppen', 'Wählen Sie die Mitgliedergruppen für diesen Trainingsplan aus.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructions']                  = array('Trainingsanweisungen', 'Geben Sie die Trainingsanweisungen für diesen Trainingsplan ein.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructionsBlock']             = array('Block', 'Geben Sie den Block für diese Trainingsanweisungen an.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructionsRepetition']        = array('Wiederholung', 'Geben Sie die Anzahl der Wiederholungen für diese Trainingsanweisungen an.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructionsInterval']          = array('Intervall', 'Geben Sie die Intervalllänge für diese Trainingsanweisungen an.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructionsDescription']       = array('Beschreibung', 'Geben Sie die Beschreibung für diese Trainingsanweisungen an.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructionsExecution']         = array('Ausführung', 'Geben Sie spezielle Ausführungshinweise für diese Trainingsanweisungen an.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['comment']                       = array('Kommentar', 'Geben Sie ein Kommentar zu diesen Trainingsplan an.');
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['published']                     = array('Trainingsplan veröffentlichen', 'Geben Sie an ob der Trainingsplan auf der Webseite anzeigt werden soll.');
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['general_legend']              = 'Allgemein';
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructions_legend'] = 'Trainingsplan';
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['comment_legend']              = 'Kommentar';
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['publish_legend']              = 'Veröffentlichung';
-
-/**
- * Options
- */
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['kindOfSportOptions']['swim']                    = 'Schwimmen';
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['kindOfSportOptions']['bike']                    = 'Radfahren';
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['kindOfSportOptions']['run']                     = 'Laufen';
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['kindOfSportOptions']['athletics']               = 'Athletik';
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['performanceClassOptions']['all']                = array('Alle', 'Sportler jeder Leistungsklasse');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['performanceClassOptions']['lk1']                = array('LK1', '<i>Anfänger/in</i><br/>Technik nicht vorhanden oder nur sehr schlecht, langsame Fortbewegung');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['performanceClassOptions']['lk2']                = array('LK2', '<i>Fortgeschrittene/r</i><br/>Technik okay mit Verbesserungsbedarf, gemütliche bis zügige Fortbewegung');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['performanceClassOptions']['lk3']                = array('LK3', '<i>Ambitionierte/r</i><br/>Technik gut mit wenig Schwächen, schnelle Fortbewegung');
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsBlockOptions']['MAIN']      = 'Hauptserie';
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsBlockOptions']['TECHNIQUE'] = 'Techniktraining';
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsBlockOptions']['WARM_UP']   = 'Aufwärmen';
-$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsBlockOptions']['COOL_DOWN'] = 'Cool down';
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['general_legend']      = 'Allgemein';
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignment_legend']   = 'Zuordnung';
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructions_legend'] = 'Trainingsanweisungen';
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['comment_legend']      = 'Kommentar';
+$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['publish_legend']      = 'Veröffentlichung';
 
 /**
  * Buttons

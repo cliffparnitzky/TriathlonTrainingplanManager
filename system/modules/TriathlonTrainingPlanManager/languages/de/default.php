@@ -28,13 +28,45 @@
  */
 
 /**
- * Define tabel parts
+ * Define error messages
  */
-$GLOBALS['TL_LANG']['TriathlonTrainingPlanManager']['thead']['place']         = "Platz";
-$GLOBALS['TL_LANG']['TriathlonTrainingPlanManager']['thead']['team']          = "Team";
-$GLOBALS['TL_LANG']['TriathlonTrainingPlanManager']['thead']['scoringPoints'] = "Wertungspunkte";
-$GLOBALS['TL_LANG']['TriathlonTrainingPlanManager']['thead']['placeNumber']   = "Platzziffer";
-$GLOBALS['TL_LANG']['TriathlonTrainingPlanManager']['thead']['points']        = "Punkte";
-$GLOBALS['TL_LANG']['TriathlonTrainingPlanManager']['tfoot']                  = "Stand %s nach %s von %s Rennen";
+$GLOBALS['TL_LANG']['ERR']['TriathlonTrainingPlan_NoIds']   = "Es konnten keine Ids für Trainingspläne ermittelt werden.";
+$GLOBALS['TL_LANG']['ERR']['TriathlonTrainingPlan_NoPlans'] = "Es konnten keine Trainingspläne ermittelt werden.";
+
+/**
+ * Define kinds of sport
+ */
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['kindOfSport']['swim']      = 'Schwimmen';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['kindOfSport']['bike']      = 'Radfahren';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['kindOfSport']['run']       = 'Laufen';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['kindOfSport']['athletics'] = 'Athletik';
+
+/**
+ * Define performance classes
+ */
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['performanceClass']['all']           = array('Alle', 'Sportler jeder Leistungsklasse');
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['performanceClass']['beginners']     = array('Anfänger', 'Technik nicht vorhanden oder nur sehr schlecht, langsame Fortbewegung, betreibt den Sport erst seit Kurzem');
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['performanceClass']['intermediates'] = array('Fortgeschrittene', 'Technik okay mit Verbesserungsbedarf, gemütliche bis zügige Fortbewegung, betreibt den Sport als intensives Hobby');
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['performanceClass']['ambitious']     = array('Ambitionierte', 'Technik gut mit wenig Schwächen, schnelle Fortbewegung, betreibt den Sport semi professionell');
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['performanceClass']['professionals'] = array('Profis', 'Technik sehr gut, sehr schnelle Fortbewegung, betreibt den Sport professionell');
+
+/**
+ * Define performance classes
+ */
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock']['MAIN']      = 'Hauptserie';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock']['MAIN_1']    = 'Hauptserie 1';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock']['MAIN_2']    = 'Hauptserie 2';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock']['MAIN_3']    = 'Hauptserie 3';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock']['MAIN_4']    = 'Hauptserie 4';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock']['MAIN_5']    = 'Hauptserie 5';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock']['TECHNIQUE'] = 'Techniktraining';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock']['WARM_UP']   = 'Aufwärmen';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock']['COOL_DOWN'] = 'Cool down';
+
+/**
+ * Define some front end labels
+ */
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['totalSum']  = 'Summe';
+$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['totalSums'] = 'Summen';
 
 ?>

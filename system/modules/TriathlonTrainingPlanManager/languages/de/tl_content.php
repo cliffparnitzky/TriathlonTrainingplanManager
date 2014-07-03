@@ -10,12 +10,12 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
@@ -28,23 +28,20 @@
  */
 
 /**
- * Define name and tooltip for preferences (inactive modules)
+ * Fields
  */
-$GLOBALS['TL_LANG']['MOD']['TriathlonTrainingPlanManager'] = 'Triathlon Trainingsplan Manager';
+$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingPlanSource']   = array('Quelle des Trainingsplans', 'Geben Sie an wie der Trainingsplan festgelegt wird.');
+$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingPlan']         = array('Trainingsplan', 'Wählen Sie den Trainingsplan aus.');
+$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingPlanTemplate'] = array('Trainingsplantemplate', 'Wählen Sie das Trainingsplantemplate aus.');
 
 /**
- * Define name for backend module
+ * Options
  */
-$GLOBALS['TL_LANG']['MOD']['triathlonTrainingPlans'] = array('Triathlon Trainingspläne', 'Verwaltung von Triathlon Trainingsplänen.');
+$GLOBALS['TL_LANG']['tl_content']['trainingplan_legend'] = 'Trainingsplanekonfiguration';
 
 /**
- * Define name and tooltip frontend modules
+ * Options
  */
-$GLOBALS['TL_LANG']['FMD']['triathlonTrainingPlans'] = array('Triathlon Trainingspläne', 'Stellt ein Modul zur Anzeige von Triathlon Trainingsplänen zur Verfügung.');
-
-/**
- * Content elements
- */
-$GLOBALS['TL_LANG']['CTE']['triathlonTrainingPlans'] = array('Triathlon Trainingspläne', 'Stellt ein Inhaltselement zur Anzeige von Triathlon Trainingsplänen zur Verfügung.');  
+$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingPlanSourceOptions']['choose'] = 'Trainingsplan auswählen';
 
 ?>

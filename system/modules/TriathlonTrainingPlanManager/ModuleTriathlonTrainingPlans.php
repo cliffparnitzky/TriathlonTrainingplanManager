@@ -2,7 +2,7 @@
 
 /**
  * Contao Open Source CMS
- * Copyright (C) 2005-2011 Leo Feyer
+ * Copyright (C) 2005-2013 Leo Feyer
  *
  * Formerly known as TYPOlight Open Source CMS.
  *
@@ -28,19 +28,19 @@
  */
 
 /**
- * Class ModuleTriathlonTrainingPlanManagerListing
+ * Class ModuleTriathlonTrainingPlans
  *
- * Front end module "triathlonTrainingPlanManagerListing".
+ * Front end module "triathlonTrainingPlan".
  * @copyright  Cliff Parnitzky 2013
  * @author     Cliff Parnitzky
  * @package    Controller
  */
-class ModuleTriathlonTrainingPlanManagerListing extends Module {
+class ModuleTriathlonTrainingPlans extends Module {
 	/**
 	 * Template
 	 * @var string
 	 */
-	protected $strTemplate = 'mod_triathlonTrainingPlanManagerListing';
+	protected $strTemplate = 'mod_triathlonTrainingPlanList';
 
 	/**
 	 * Redirect to the selected page
@@ -50,7 +50,7 @@ class ModuleTriathlonTrainingPlanManagerListing extends Module {
 		if (TL_MODE == 'BE') {
 			$objTemplate = new BackendTemplate('be_wildcard');
 
-			$objTemplate->wildcard = '### TRIATHLON TRAINING PLAN MANAGER LISTING ###';
+			$objTemplate->wildcard = '### TRIATHLON TRAINING PLAN ###';
 			$objTemplate->title = $this->headline;
 			$objTemplate->id = $this->id;
 			$objTemplate->link = $this->name;
@@ -66,7 +66,7 @@ class ModuleTriathlonTrainingPlanManagerListing extends Module {
 	 * Generate module
 	 */
 	protected function compile() {
-		if ($this->triathlonLeagueTableTemplate != 'mod_triathlonTrainingPlanManagerListing')
+		if ($this->triathlonLeagueTableTemplate != 'mod_triathlonTrainingPlanList')
 		{
 			$this->strTemplate = $this->triathlonLeagueTableTemplate;
 
@@ -76,6 +76,11 @@ class ModuleTriathlonTrainingPlanManagerListing extends Module {
 		
 		$this->Template->table = deserialize($this->triathlonLeagueTable);
 		$this->Template->teams = $this->getTeams();
+		
+		
+		
+		// TODO ist totalComputable : über alles instructions gehen und prüfen ob die Einheiten gleich sind .... wenn ja -> true
+		// wenn in Modul displaySum && totalComputable ... Summe berechnen und ausgeben ... wenn !totalComputable -> Fehlermeldung ausgeben
 		
 		$arrRaceCount = deserialize($this->triathlonLeagueRaceCount);
 		$this->Template->tfoot = sprintf($GLOBALS['TL_LANG']['RscTriathlonLeagueManager']['tfoot'], date('d.m.Y', $this->triathlonLeagueUpdateDate), $arrRaceCount[0], $arrRaceCount[1]);

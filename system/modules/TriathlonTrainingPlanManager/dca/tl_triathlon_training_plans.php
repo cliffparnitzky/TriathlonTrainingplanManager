@@ -45,14 +45,13 @@ $GLOBALS['TL_DCA']['tl_triathlon_training_plans'] = array
 	(
 		'sorting' => array (
 			'mode'                    => 2,
-			'fields'                  => array('date', 'kindOfSport', 'performanceClass'),
-			'flag'                    => 5,
+			'fields'                  => array('date DESC', 'kindOfSport'),
 			'panelLayout'             => 'filter;sort,search,limit'
 		),
 		'label' => array
 		(
-			'fields'                => array('kindOfSport', 'performanceClass', 'title'),
-			'format'                => '%s (%s) <span style="color:#b3b3b3; padding-left:3px;">%s</span>',
+			'fields'                => array('kindOfSport', 'title'),
+			'format'                => '%s <span style="color:#b3b3b3; padding-left:3px;">%s</span>',
 			'label_callback'        => array('tl_triathlon_training_plans', 'addIcon') 
 		),
 		'global_operations' => array
@@ -105,8 +104,16 @@ $GLOBALS['TL_DCA']['tl_triathlon_training_plans'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'__selector__' => array(),
-		'default'      => '{general_legend},title,date,kindOfSport,performanceClass;{trainingInstructions_legend},trainingInstructions;{comment_legend},comment;{publish_legend},published'
+		'__selector__' => array('assignmentForPerformanceClass', 'assignmentForMembers', 'assignmentForMemberGroups'),
+		'default'      => '{general_legend},title,date,kindOfSport;{assignment_legend},assignmentForPerformanceClass,assignmentForMembers,assignmentForMemberGroups;{instructions_legend},instructions;{comment_legend},comment;{publish_legend},published'
+	),
+
+	// Subpalettes
+	'subpalettes' => array
+	(
+		'assignmentForPerformanceClass' => 'assignmentPerformanceClass',
+		'assignmentForMembers'          => 'assignmentMembers',
+		'assignmentForMemberGroups'     => 'assignmentMemberGroups'
 	),
 
 	// Fields
@@ -128,7 +135,7 @@ $GLOBALS['TL_DCA']['tl_triathlon_training_plans'] = array
 			'sorting'               => true,
 			'flag'                  => 5,
 			'inputType'             => 'text',
-			'eval'                  => array('mandatory'=>true, 'rgxp'=>'date', 'datepicker'=>$this->getDatePickerString(), 'tl_class'=>'w50 wizard')
+			'eval'                  => array('mandatory'=>true, 'rgxp'=>'date', 'datepicker'=>$this->getDatePickerString(), 'tl_class'=>'w50 wizard', 'doNotCopy'=>true)
 		),
 		'kindOfSport' => array
 		(
@@ -139,24 +146,63 @@ $GLOBALS['TL_DCA']['tl_triathlon_training_plans'] = array
 			'flag'                  => 11,
 			'inputType'             => 'select',
 			'options'               => array('swim', 'bike', 'run', 'athletics'),
-			'reference'             => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['kindOfSportOptions'],
+			'reference'             => &$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['kindOfSport'],
 			'eval'                  => array('mandatory'=>true, 'includeBlankOption'=>true, 'tl_class'=>'clr w50')
 		),
-		'performanceClass' => array
+		'assignmentForPerformanceClass' => array
 		(
-			'label'                 => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['performanceClass'],
+			'label'                 => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentForPerformanceClass'],
+			'exclude'               => true,
+			'inputType'             => 'checkbox',
+			'eval'                  => array('tl_class'=>'m12 w50 clr', 'submitOnChange'=>true)
+		),
+		'assignmentPerformanceClass' => array
+		(
+			'label'                 => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentPerformanceClass'],
 			'exclude'               => true,
 			'filter'                => true,
 			'sorting'               => true,
 			'flag'                  => 11,
 			'inputType'             => 'select',
-			'options'               => array('all', 'lk1', 'lk2', 'lk3'),
-			'reference'             => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['performanceClassOptions'],
+			'options'               => array('all', 'beginners', 'intermediates', 'ambitious', 'professionals'),
+			'reference'             => &$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['performanceClass'],
 			'eval'                  => array('mandatory'=>true, 'includeBlankOption'=>true, 'tl_class'=>'w50', 'helpwizard'=>true)
 		),
-		'trainingInstructions' => array
+		'assignmentForMembers' => array
 		(
-			'label'                 => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructions'],
+			'label'                 => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentForMembers'],
+			'exclude'               => true,
+			'inputType'             => 'checkbox',
+			'eval'                  => array('tl_class'=>'m12 w50 clr', 'submitOnChange'=>true)
+		),
+		'assignmentMembers' => array
+		(
+			'label'                 => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentMembers'],
+			'exclude'               => true,
+			'filter'                => true,
+			'inputType'             => 'checkbox',
+			'foreignKey'            => 'tl_member.CONCAT(firstname," ",lastname)',
+			'eval'                  => array('mandatory'=>true, 'multiple'=>true, 'tl_class'=>'w50')
+		),
+		'assignmentForMemberGroups' => array
+		(
+			'label'                 => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentForMemberGroups'],
+			'exclude'               => true,
+			'inputType'             => 'checkbox',
+			'eval'                  => array('tl_class'=>'m12 w50 clr', 'submitOnChange'=>true)
+		),
+		'assignmentMemberGroups' => array
+		(
+			'label'                 => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['assignmentMemberGroups'],
+			'exclude'               => true,
+			'filter'                => true,
+			'inputType'             => 'checkbox',
+			'foreignKey'            => 'tl_member_group.name', 
+			'eval'                  => array('mandatory'=>true, 'multiple'=>true, 'tl_class'=>'w50')
+		),
+		'instructions' => array
+		(
+			'label'                 => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructions'],
 			'exclude'               => true,
 			'inputType'             => 'multiColumnWizard',
 			'load_callback' => array
@@ -171,40 +217,40 @@ $GLOBALS['TL_DCA']['tl_triathlon_training_plans'] = array
 				'minCount'        => 1,
 				'files'           => true,
 				'filesOnly'       => true,
-				'extensions'=>'csv',
-				'fieldType'=>'radio',
+				'extensions'      => 'csv',
+				'fieldType'       => 'radio',
 				'columnFields' => array
 				(
 					'block' => array
 					(
-						'label'            => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsBlock'],
+						'label'            => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructionsBlock'],
 						'inputType'        => 'select',
-						'options'          => array('MAIN', 'TECHNIQUE', 'WARM_UP', 'COOL_DOWN'),
-						'reference'        => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsBlockOptions'],
+						'options'          => array('MAIN', 'MAIN_1', 'MAIN_2', 'MAIN_3', 'MAIN_4', 'MAIN_5', 'TECHNIQUE', 'WARM_UP', 'COOL_DOWN'),
+						'reference'        => &$GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock'],
 						'eval'             => array('style'=>'width: 80px;', 'includeBlankOption'=>true)
 					),
 					'repetition' => array
 					(
-						'label'            => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsRepetition'],
+						'label'            => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructionsRepetition'],
 						'inputType'        => 'text',
 						'eval'             => array('style'=>'width: 80px', 'mandatory'=>true, 'rgxp'=>'digit')
 					),
 					'interval' => array
 					(
-						'label'            => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsInterval'],
+						'label'            => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructionsInterval'],
 						'inputType'        => 'inputUnit',
 						'options'          => array('m', 'km', 'sek', 'min'), 
 						'eval'             => array('style'=>'width: 40px', 'mandatory'=>true, 'rgxp'=>'digit')
 					),
 					'description' => array
 					(
-						'label'            => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsDescription'],
+						'label'            => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructionsDescription'],
 						'inputType'        => 'text',
 						'eval'             => array('style'=>'width: 95%;', 'mandatory'=>true)
 					),
 					'execution' => array
 					(
-						'label'            => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['trainingInstructionsExecution'],
+						'label'            => &$GLOBALS['TL_LANG']['tl_triathlon_training_plans']['instructionsExecution'],
 						'inputType'        => 'text',
 						'eval'             => array('style'=>'width: 95%;')
 					)
@@ -235,7 +281,7 @@ $GLOBALS['TL_DCA']['tl_triathlon_training_plans'] = array
  *
  * Provide miscellaneous methods that are used by the data configuration array.
  * PHP version 5
- * @copyright  Cliff Parnitzky 2011
+ * @copyright  Cliff Parnitzky 2013
  * @author     Cliff Parnitzky
  * @package    Controller
  */
@@ -345,7 +391,7 @@ class tl_triathlon_training_plans extends Backend
 	 */
 	public function addImportWizardToLabel($value, $dc)
 	{
-		$GLOBALS['TL_DCA']['tl_triathlon_training_plans']['fields']['trainingInstructions']['label'][0] .= '<a href="'.$this->Environment->request.'&amp;field=trainingInstructions&amp;key=import" title="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][1].'" onclick="Backend.getScrollOffset();"><img src="system/themes/default/images/theme_import.gif" width="16" height="14" alt="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][0].'" style="vertical-align:text-bottom; margin-left: 5px;"></a>';
+		$GLOBALS['TL_DCA']['tl_triathlon_training_plans']['fields']['instructions']['label'][0] .= '<a href="'.$this->Environment->request.'&amp;field=instructions&amp;key=import" title="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][1].'" onclick="Backend.getScrollOffset();"><img src="system/themes/default/images/tablewizard.gif" width="16" height="14" alt="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][0].'" style="vertical-align:text-bottom; margin-left: 5px;"></a>';
 		
 		return $value;
 	}

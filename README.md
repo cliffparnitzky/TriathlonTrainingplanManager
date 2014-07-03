@@ -14,7 +14,7 @@ Install it manually.
 Tracker
 -------
 
-https://github.com/rsclg/TriathlonTrainingPlanManager/issues
+https://github.com/cliffparnitzky/TriathlonTrainingPlanManager/issues
 
 
 Compatibility
@@ -33,4 +33,4 @@ Dependency
 Screenshots
 -----------
 
-![Screenshot](https://raw.github.com/rsclg/TriathlonTrainingPlanManager/master/screenshot.jpg)
+![Screenshot](https://raw.github.com/cliffparnitzky/TriathlonTrainingPlanManager/master/screenshot.jpg)

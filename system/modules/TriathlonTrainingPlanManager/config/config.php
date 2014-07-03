@@ -40,5 +40,11 @@ $GLOBALS['BE_MOD']['content']['triathlonTrainingPlans'] = array
 /**
  * Front end module
  */
-$GLOBALS['FE_MOD']['miscellaneous']['triathlonTrainingPlanManagerListing'] = 'ModuleTriathlonTrainingPlanManagerListing'; 
+// $GLOBALS['FE_MOD']['miscellaneous']['triathlonTrainingPlans'] = 'ModuleTriathlonTrainingPlans';
+
+/**
+ * Content elements
+ */
+$GLOBALS['TL_CTE']['includes']['triathlonTrainingPlans'] = 'ContentTriathlonTrainingPlans';
+
 ?>
