@@ -1,0 +1,20 @@
+﻿# This is a template for triathlon training plans
+# Columns: block;repetition;interval;interval_unit;description;execution
+# Possible values for ...
+# ... block        : WARM_UP, TECHNIQUE, MAIN, MAIN_1, MAIN_2, MAIN_3, MAIN_4, MAIN_5, COOL_DOWN, or empty
+# ... repetition   : digit value
+# ... interval     : digit value
+# ... interval_unit: m, km, sek, min
+# ... description  : text value
+# ... execution    : text value
+
+WARM_UP;1;200;m;Einschwimmen;
+TECHNIQUE;8;50;m;Im Wechsel: 15m Brust mit Kraul-Beine + 35m Kraul auf Technik und 50m Mini-Lagen;
+TECHNIQUE;4;100;m;25m Beine + 50m TÜ + 25m ganze Lage (1 x je Lage);
+MAIN;8;100;m;50m GA1 + 25m WSA max. Tempo + 25m ReKom;Pause: 40s
+MAIN;1;100;m;lockeres Schwimmen;
+MAIN;4;200;m;100m GA1 + 50m WSA max. Tempo + 50m ReKom;Pause: 60s
+MAIN;1;100;m;lockeres Schwimmen;
+;8;50;m;25m Kraul GA1 (Rolle ohne Wandkontakt um Tempo neu aufzubauen) + 25m GA2;Pause: 30s
+;1;200;m;Beine GA1;die letzten 5m jeder Bahn Sprint
+COOL_DOWN;1;200;m;Ausschwimmen;
