@@ -1,8 +1,8 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * Contao Open Source CMS
- * Copyright (C) 2005-2013 Leo Feyer
+ * Copyright (C) 2005-2015 Leo Feyer
  *
  * Formerly known as TYPOlight Open Source CMS.
  *
@@ -10,41 +10,42 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Cliff Parnitzky 2013
+ * @copyright  Cliff Parnitzky 2013-2015
  * @author     Cliff Parnitzky
- * @package    TriathlonTrainingPlanManager
+ * @package    TriathlonTrainingplanManager
  * @license    LGPL
  */
 
 /**
  * Define name and tooltip for preferences (inactive modules)
  */
-$GLOBALS['TL_LANG']['MOD']['TriathlonTrainingPlanManager'] = 'Triathlon Trainingsplan Manager';
+$GLOBALS['TL_LANG']['MOD']['TriathlonTrainingplanManager'] = 'Triathlon Trainingsplan Manager';
 
 /**
  * Define name for backend module
  */
-$GLOBALS['TL_LANG']['MOD']['triathlonTrainingPlans'] = array('Triathlon Trainingspläne', 'Verwaltung von Triathlon Trainingsplänen.');
+$GLOBALS['TL_LANG']['MOD']['triathlonTrainingplans'] = array('Triathlon Trainingspläne', 'Verwaltung von Triathlon Trainingsplänen.');
 
 /**
- * Define name and tooltip frontend modules
+ * Define name and tooltip for frontend modules
  */
-$GLOBALS['TL_LANG']['FMD']['triathlonTrainingPlans'] = array('Triathlon Trainingspläne', 'Stellt ein Modul zur Anzeige von Triathlon Trainingsplänen zur Verfügung.');
+// $GLOBALS['TL_LANG']['FMD']['triathlonTrainingplans'] = array('Triathlon Trainingspläne', 'Stellt ein Modul zur Anzeige von Triathlon Trainingsplänen zur Verfügung.');
 
 /**
- * Content elements
+ * Define name and tooltip for content elements
  */
-$GLOBALS['TL_LANG']['CTE']['triathlonTrainingPlans'] = array('Triathlon Trainingspläne', 'Stellt ein Inhaltselement zur Anzeige von Triathlon Trainingsplänen zur Verfügung.');  
+$GLOBALS['TL_LANG']['CTE']['triathlonTrainingplanManager']     = "Triathlon Trainingsplan Manager";
+$GLOBALS['TL_LANG']['CTE']['triathlonTrainingplanManagerPlan'] = array('Triathlon Trainingsplan', 'Stellt ein Inhaltselement zur Anzeige eines Triathlon Trainingsplans zur Verfügung.');
 
 ?>

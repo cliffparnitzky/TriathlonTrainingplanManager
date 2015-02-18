@@ -1,8 +1,8 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * Contao Open Source CMS
- * Copyright (C) 2005-2013 Leo Feyer
+ * Copyright (C) 2005-2015 Leo Feyer
  *
  * Formerly known as TYPOlight Open Source CMS.
  *
@@ -21,27 +21,25 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Cliff Parnitzky 2013
+ * @copyright  Cliff Parnitzky 2013-2015
  * @author     Cliff Parnitzky
- * @package    TriathlonTrainingPlanManager
+ * @package    TriathlonTrainingplanManager
  * @license    LGPL
  */
 
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingPlanSource']   = array('Quelle des Trainingsplans', 'Geben Sie an wie der Trainingsplan festgelegt wird.');
-$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingPlan']         = array('Trainingsplan', 'Wählen Sie den Trainingsplan aus.');
-$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingPlanTemplate'] = array('Trainingsplantemplate', 'Wählen Sie das Trainingsplantemplate aus.');
+$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingplanManagerPlanSource']    = array('Quelle des Trainingsplans', 'Geben Sie an wie der Trainingsplan ermittelt wird.');
+$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingplanManagerPlanSelection'] = array('Trainingsplan', 'Wählen Sie den Trainingsplan aus.');
 
 /**
  * Options
  */
-$GLOBALS['TL_LANG']['tl_content']['trainingplan_legend'] = 'Trainingsplanekonfiguration';
-
+$GLOBALS['TL_LANG']['tl_content']['trainingplan_legend'] = 'Trainingsplankonfiguration';
 /**
  * Options
  */
-$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingPlanSourceOptions']['choose'] = 'Trainingsplan auswählen';
+$GLOBALS['TL_LANG']['tl_content']['triathlonTrainingplanManagerPlanSourceOptions']['choose'] = 'Trainingsplan auswählen';
 
 ?>

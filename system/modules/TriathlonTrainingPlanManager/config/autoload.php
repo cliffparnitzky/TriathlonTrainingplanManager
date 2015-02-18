@@ -3,12 +3,21 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2013 Leo Feyer
+ * Copyright (c) 2005-2015 Leo Feyer
  *
- * @package TriathlonTrainingPlanManager
+ * @package TriathlonTrainingplanManager
  * @link    https://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
+
+
+/**
+ * Register the namespaces
+ */
+ClassLoader::addNamespaces(array
+(
+	'TriathlonTrainingplanManager',
+));
 
 
 /**
@@ -16,7 +25,16 @@
  */
 ClassLoader::addClasses(array
 (
-	'ModuleTriathlonTrainingPlanManagerListing' => 'system/modules/TriathlonTrainingPlanManager/ModuleTriathlonTrainingPlanManagerListing.php',
+	// Elements
+	'TriathlonTrainingplanManager\ContentTriathlonTrainingplanManagerPlan' => 'system/modules/TriathlonTrainingplanManager/elements/ContentTriathlonTrainingplanManagerPlan.php',
+
+	// Models
+	'TriathlonTrainingplanManager\MemberGroupModel'                        => 'system/modules/TriathlonTrainingplanManager/models/MemberGroupModel.php',
+	'TriathlonTrainingplanManager\MemberModel'                             => 'system/modules/TriathlonTrainingplanManager/models/MemberModel.php',
+	'TriathlonTrainingplanManager\TriathlonTrainingplansModel'             => 'system/modules/TriathlonTrainingplanManager/models/TriathlonTrainingplansModel.php',
+
+	// Modules
+	'TriathlonTrainingplanManager\ModuleTriathlonTrainingplans'            => 'system/modules/TriathlonTrainingplanManager/modules/ModuleTriathlonTrainingplans.php',
 ));
 
 
@@ -25,5 +43,7 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-	'mod_triathlonTrainingPlanManagerListing' => 'system/modules/TriathlonTrainingPlanManager/templates',
+	'ce_triathlonTrainingplanManagerPlan' => 'system/modules/TriathlonTrainingplanManager/templates/elements',
+	'mod_triathlonTrainingplanDetails'    => 'system/modules/TriathlonTrainingplanManager/templates/modules',
+	'mod_triathlonTrainingplanList'       => 'system/modules/TriathlonTrainingplanManager/templates/modules',
 ));

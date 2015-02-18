@@ -1,8 +1,8 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * Contao Open Source CMS
- * Copyright (C) 2005-2013 Leo Feyer
+ * Copyright (C) 2005-2015 Leo Feyer
  *
  * Formerly known as TYPOlight Open Source CMS.
  *
@@ -21,9 +21,9 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Cliff Parnitzky 2013
+ * @copyright  Cliff Parnitzky 2013-2015
  * @author     Cliff Parnitzky
- * @package    TriathlonTrainingPlanManager
+ * @package    TriathlonTrainingplanManager
  * @license    LGPL
  */
 
@@ -42,8 +42,8 @@
 // $GLOBALS['TL_LANG']['tl_module']['triathlonLeagueUpdateDate']         = array('Stand (Datum der letzten Aktualisierung)', 'Erfassen Sie letzte Aktualisierungsdatum der Tabelle.');
 // $GLOBALS['TL_LANG']['tl_module']['triathlonLeagueRaceCount']          = array('Rennen x von y', 'Erfassen den Stand der Rennen. Wieviel Rennen (x) von y Rennen wurden bereits absoviert.');
 // 
-// $GLOBALS['TL_LANG']['tl_module']['triathlonTrainingPlanManagerListingTemplate'] = array('Listentemplate', 'Wählen Sie das Listentemplate aus.');
-// $GLOBALS['TL_LANG']['tl_module']['triathlonTrainingPlanManagerDetailsTemplate'] = array('Detailseitentemplate', 'Wählen Sie das Detailseitentemplate aus.');
+// $GLOBALS['TL_LANG']['tl_module']['triathlonTrainingplanManagerListingTemplate'] = array('Listentemplate', 'Wählen Sie das Listentemplate aus.');
+// $GLOBALS['TL_LANG']['tl_module']['triathlonTrainingplanManagerDetailsTemplate'] = array('Detailseitentemplate', 'Wählen Sie das Detailseitentemplate aus.');
 // 
 // /**
 //  * Options

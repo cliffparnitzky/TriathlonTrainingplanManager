@@ -6,23 +6,8 @@
 <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 <?php endif; ?>
 
-<style>
-.instructions > table td {
-    border-right: 1px solid #000000;
-    border-top: 1px solid #000000;
-    padding: 3px;
-}
-.instructions > table {
-    border-bottom: 1px solid #000000;
-    border-left: 1px solid #000000;
-}
-.instructions > table tr:nth-child(2n) td {
-    border-top: 0 none;
-}
-</style>
-
 <?php if ($this->error) : ?>
-<div class="error"><?php echo $this->errorMsg; ?></div>
+<p class="error"><?php echo $this->errorMsg; ?></p>
 <?php else : ?>
 	<?php foreach ($this->plans as $plan) : ?>
 	<div class="plan <?php echo $plan['kindOfSport']; ?> <?php echo $plan['performanceClass']; ?>">
@@ -55,26 +40,39 @@
 		<div class="instructions">
 			<label><?php echo $plan['instructionsLabel']; ?>:</label>
 			<table cellspacing="0" cellpadding="0" border="0" width="600">
+				<tbody>
+			<?php $rowCounter = 0; ?>
+			<?php $blockCounter = 0; ?>
+			<?php $instructionCounter = 0; ?>
+			<?php $blockInstructionCounter = 0; ?>
 			<?php foreach($plan['instructions'] as $blockName=>$block): ?>
-				<tr>
-					<td rowspan="<?php echo (count($block) * 2); ?>"><?php echo (strlen($GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock'][$blockName]) > 0) ? $GLOBALS['TL_LANG']['TriathlonTrainingPlan']['instructionBlock'][$blockName] : $blockName; ?></td>
-					<?php $newRow = false; ?>
-					<?php foreach($block as $instruction): ?>
-			<?php if ($newRow): ?>
-				<tr>
-			<?php endif; ?>
-					<td rowspan="2"><?php echo $instruction['repetition']; ?></td>
-					<td rowspan="2">X</td>
-					<td rowspan="2"><?php echo $instruction['interval']['value']; ?></td>
-					<td rowspan="2"><?php echo $instruction['interval']['unit']; ?></td>
-					<td><?php echo $instruction['description']; ?></td>
-				</tr>
-				<tr>
-					<td><?php echo $instruction['execution']; ?></td>
-				</tr>
-						<?php $newRow = true; ?>
-					<?php endforeach; ?>
+					<tr class="block_<?php echo $blockCounter; ?> instruction_<?php echo $instructionCounter; ?> block_instruction_<?php echo $blockInstructionCounter; ?> row_<?php echo $rowCounter; ?><?php if ($rowCounter == 0) : ?> row_first<?php endif; ?><?php if (($rowCounter % 2) == 0) : ?> even<?php else: ?> odd<?php endif; ?>">
+						<td rowspan="<?php echo (count($block) * 2); ?>" class="body col_0 col_first"><?php echo (strlen($GLOBALS['TL_LANG']['TriathlonTrainingplan']['instructionBlock'][$blockName]) > 0) ? $GLOBALS['TL_LANG']['TriathlonTrainingplan']['instructionBlock'][$blockName] : $blockName; ?></td>
+			<?php $newRow = false; ?>
+			<?php foreach($block as $instruction): ?>
+				<?php if ($newRow): ?>
+					<?php $rowCounter = 0; ?>
+					<tr class="block_<?php echo $blockCounter; ?> instruction_<?php echo $instructionCounter; ?> block_instruction_<?php echo $blockInstructionCounter; ?> row_<?php echo $rowCounter; ?><?php if (($rowCounter % 2) == 0) : ?> even<?php else: ?> odd<?php endif; ?>">
+				<?php endif; ?>
+						<td rowspan="2" class="body col_1"><?php echo $instruction['repetition']; ?></td>
+						<td rowspan="2" class="body col_2"><?php echo $GLOBALS['TL_LANG']['TriathlonTrainingplan']['repetition']; ?></td>
+						<td rowspan="2" class="body col_3"><?php echo $instruction['interval']['value']; ?></td>
+						<td rowspan="2" class="body col_4"><?php echo $instruction['interval']['unit']; ?></td>
+						<td class="body col_5 col_last"><?php echo $instruction['description']; ?></td>
+					</tr>
+					<?php $rowCounter = 0; ?>
+					<tr class="block_<?php echo $blockCounter; ?> instruction_<?php echo $instructionCounter; ?> block_instruction_<?php echo $blockInstructionCounter; ?> row_<?php echo $rowCounter; ?><?php if (((count($plan['instructions']) - 1) == $blockCounter) && ((count($block) - 1) == $blockInstructionCounter)): ?> row_last<?php endif; ?><?php if (($rowCounter % 2) == 0) : ?> even<?php else: ?> odd<?php endif; ?>">
+						<td class="body col_5 col_last"><?php echo $instruction['execution']; ?></td>
+					</tr>
+				<?php $newRow = true; ?>
+				<?php $instructionCounter++; ?>
+				<?php $blockInstructionCounter++; ?>
 			<?php endforeach; ?>
+			<?php $rowCounter++; ?>
+			<?php $blockCounter++; ?>
+			<?php $blockInstructionCounter = 0; ?>
+		<?php endforeach; ?>
+				</tbody>
 			</table>
 		</div>
 		<div class="comment"><label><?php echo $plan['commentLabel']; ?>:</label><br><?php echo $plan['comment']; ?></div>
@@ -87,6 +85,6 @@
 	</div>
 	<?php endforeach; ?>
 <?php endif; ?>
- 
+
 </div>
 <!-- indexer::continue -->

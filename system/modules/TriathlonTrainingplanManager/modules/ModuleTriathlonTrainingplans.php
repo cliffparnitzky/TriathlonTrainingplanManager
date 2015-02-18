@@ -1,8 +1,8 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * Contao Open Source CMS
- * Copyright (C) 2005-2013 Leo Feyer
+ * Copyright (C) 2005-2015 Leo Feyer
  *
  * Formerly known as TYPOlight Open Source CMS.
  *
@@ -21,26 +21,31 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Cliff Parnitzky 2013
+ * @copyright  Cliff Parnitzky 2013-2015
  * @author     Cliff Parnitzky
  * @package    TriathlonTrainingPlanManager
  * @license    LGPL
  */
 
 /**
- * Class ModuleTriathlonTrainingPlans
+ * Run in a custom namespace, so the class can be replaced
+ */
+namespace TriathlonTrainingplanManager;
+
+/**
+ * Class ModuleTriathlonTrainingplans
  *
- * Front end module "triathlonTrainingPlan".
- * @copyright  Cliff Parnitzky 2013
+ * Front end module "triathlonTrainingplan".
+ * @copyright  Cliff Parnitzky 2013-2015
  * @author     Cliff Parnitzky
  * @package    Controller
  */
-class ModuleTriathlonTrainingPlans extends Module {
+class ModuleTriathlonTrainingplans extends \Module {
 	/**
 	 * Template
 	 * @var string
 	 */
-	protected $strTemplate = 'mod_triathlonTrainingPlanList';
+	protected $strTemplate = 'mod_triathlonTrainingplanList';
 
 	/**
 	 * Redirect to the selected page
@@ -48,7 +53,7 @@ class ModuleTriathlonTrainingPlans extends Module {
 	 */
 	public function generate() {
 		if (TL_MODE == 'BE') {
-			$objTemplate = new BackendTemplate('be_wildcard');
+			$objTemplate = new \BackendTemplate('be_wildcard');
 
 			$objTemplate->wildcard = '### TRIATHLON TRAINING PLAN ###';
 			$objTemplate->title = $this->headline;
@@ -66,7 +71,7 @@ class ModuleTriathlonTrainingPlans extends Module {
 	 * Generate module
 	 */
 	protected function compile() {
-		if ($this->triathlonLeagueTableTemplate != 'mod_triathlonTrainingPlanList')
+		if ($this->triathlonLeagueTableTemplate != $strTemplate)
 		{
 			$this->strTemplate = $this->triathlonLeagueTableTemplate;
 
