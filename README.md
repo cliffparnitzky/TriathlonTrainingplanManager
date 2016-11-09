@@ -32,7 +32,9 @@ Compatibility
 Dependency
 ----------
 
-- This extension is dependent on the following extensions: [[menatwork/contao-multicolumnwizard]](https://packagist.org/packages/menatwork/contao-multicolumnwizard)
+This extension is dependent on the following extensions:
+
+- [[menatwork/contao-multicolumnwizard]](https://packagist.org/packages/menatwork/contao-multicolumnwizard)
 
 
 Screenshots
